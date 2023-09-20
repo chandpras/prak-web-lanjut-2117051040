@@ -1,0 +1,53 @@
+:root {
+    --main-color: #383421;
+    --sec-color: #b9bb75;
+    --white: #f2f2f2;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    }
+
+    body{
+        background: url('../img/bg2.jpg');
+        background-size: cover;
+    }
+
+    .profile-card{
+        width: 350px;
+        text-align: center;
+        margin: 10% auto;
+        overflow: hidden;
+    }
+
+    .card-header{
+        background: var(--main-color);
+        padding: 20px 10px;
+        border-radius: 20px;
+        margin-top: 5%;
+    }
+
+    .pic{
+        display: inline-block;
+        padding: 10px;
+        background: linear-gradient(130deg,var(--sec-color) ,var(--main-color));
+        margin: auto;
+        border-radius: 50%;
+    }
+
+    .pic img{
+        display: block;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    .name{
+        color: var(--white);
+        font-size: 20px;
+        font-weight: 600;
+    }
