@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="<?= base_url('assets/css/create_style.css') ?>">
+    <title>Create Profile</title>
 </head>
 <body>
-    <h1>Create User</h1>
-    <form action="<?= base_url('/user/store') ?>" method="post">
-        <label for="nama">Nama: </label><br> <input type="text" name="nama" value=""><br><br>
-        <label for="npm">NPM: </label><br> <input type="text" name="npm" value=""><br><br>
-        <label for="kelas">Kelas: </label><br> <input type="text" name="kelas" value=""><br><br>
-        <input type="submit" value="Submit">
-    </form>
+        <div class="container">
+            <div class="login">
+                <form action="<?= base_url('/user/store') ?>" method="post">
+                    <h1>CREATE PROFILE</h1>
+                    <hr>
+                    <label for="nama">Nama</label>
+                    <input type="text" placeholder="Nama" name="nama" required>
+                    <label for="kelas">Kelas</label>
+                    <input type="text" placeholder="Kelas" name="kelas" required>
+                    <label for="npm">NPM</label>
+                    <input type="text" placeholder="NPM" name="npm" required>
+                    <button class="btn" type="submit">CREATE</button>
+                </form>
+            </div>
+        </div>
 </body>
 </html>
