@@ -79,7 +79,7 @@ form label {
     color: var(--white);
 }
 
-input {
+input, select {
     width: 100%;
     text-transform: none;
     margin-bottom: 1rem;
