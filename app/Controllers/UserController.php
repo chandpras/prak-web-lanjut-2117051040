@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\UserModel;
 
 class UserController extends BaseController
 {
@@ -23,6 +24,7 @@ class UserController extends BaseController
 
     public function create()
     {
+
         $kelas = [
             [
                 'id' => 1,
@@ -42,8 +44,10 @@ class UserController extends BaseController
             ], 
         ];
 
+        // session();
         $data = [
             'kelas' => $kelas,
+            'validation' => \Config\Services::validation()
         ];
 
         return view('create_user', $data);
@@ -51,6 +55,23 @@ class UserController extends BaseController
 
     public function store()
     {
+        if(!$this->validate([
+            'nama' => 'required|alpha',
+            'kelas' => 'required',
+            'npm' => 'required|numeric|is_unique[user.npm]'
+        ])) {
+            $validation = \Config\Services::validation();
+            return redirect()->to('/user/create')->withInput();
+        }
+        
+        $userModel = new UserModel();
+
+        $userModel->saveUser([
+            'nama' => $this->request->getVar('nama'),
+            'id_kelas' => $this->request->getVar('kelas'),
+            'npm' => $this->request->getVar('npm')
+        ]);
+
         $data = [
             'nama' => $this->request->getVar('nama'),
             'kelas' => $this->request->getVar('kelas'),
