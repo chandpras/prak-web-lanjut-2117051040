@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= base_url('assets/css/create_style.css') ?>">
-    <title>Create Profile</title>
-</head>
-<body>
+<?= $this->extend('layouts/app') ?>
+
+<?= $this->section('content') ?>
+
+<link rel="stylesheet" href="<?= base_url('assets/css/create_style.css') ?>">
+
         <div class="container">
             <div class="login">
                 <form action="<?= base_url('/user/store') ?>" method="post">
@@ -15,7 +12,6 @@
                     <label for="nama">Nama</label>
                     <input type="text" placeholder="Nama" name="nama" value="<?= old('nama'); ?>">
                     <label for="kelas">Kelas</label>
-                    <!-- <input type="text" placeholder="Kelas" name="kelas" required> -->
                     <select name="kelas" id="kelas" value="<?= old('kelas'); ?>">
                         <?php
                             foreach ($kelas as $item) {
@@ -42,5 +38,4 @@
                 </form>
             </div>
         </div>
-</body>
-</html>
+<?= $this->endSection() ?>

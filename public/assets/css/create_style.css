@@ -2,7 +2,7 @@
     --main-color: #b9bb75;
     --sec-color: #383421;
     --white: #fff;
-    --bg: #010103;
+    --black: #010103;
     --border-main: .1rem solid #b9bb75;
 }
 
@@ -42,15 +42,13 @@ body {
     display: flex;
     justify-content: center;
     max-width: 25rem;
-    background: var(--bg);
+    background: var(--black);
     border: var(--border-main);
     border-radius: 1rem;
-    flex-wrap: wrap;
 }
 
 .login {
     width: 25rem;
-    border-top: var(--border-main);
 }
 
 form {

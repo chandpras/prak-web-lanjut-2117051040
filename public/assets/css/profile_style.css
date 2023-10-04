@@ -4,7 +4,7 @@
     --white: #f2f2f2;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Josefin Sans', sans-serif;
@@ -12,42 +12,45 @@
     text-decoration: none;
     }
 
-    body{
+    body {
         background: url('../img/bg2.jpg');
         background-size: cover;
     }
 
-    .profile-card{
-        width: 350px;
+    .profile-card {
+        width: 22rem;
         text-align: center;
-        margin: 10% auto;
         overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
-    .card-header{
+    .card-header {
         background: var(--main-color);
-        padding: 20px 10px;
+        padding: 1.25rem .6rem;
         border-radius: 20px;
         margin-top: 5%;
     }
 
-    .pic{
+    .pic {
         display: inline-block;
-        padding: 10px;
+        padding: .6rem;
         background: linear-gradient(130deg,var(--sec-color) ,var(--main-color));
         margin: auto;
         border-radius: 50%;
     }
 
-    .pic img{
+    .pic img {
         display: block;
-        width: 150px;
-        height: 150px;
+        width: 9rem;
+        height: 9rem;
         border-radius: 50%;
     }
 
-    .name{
+    .name {
         color: var(--white);
-        font-size: 20px;
+        font-size: 15pt;
         font-weight: 600;
     }
