@@ -11,7 +11,7 @@
                 <th>Nama</th>
                 <th>NPM</th>
                 <th>Kelas</th>
-                <th colspan="2">Aksi</th>
+                <th colspan="3">Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -23,8 +23,11 @@
                     <td><?= $user['nama'] ?></td>
                     <td><?= $user['npm'] ?></td>
                     <td><?= $user['nama_kelas'] ?></td>
-                    <td>Edit</td>
-                    <td>Hapus</td>
+                    <td>
+                        <a href="<?= base_url('user/' . $user['id']) ?>">Detail</a>
+                    </td>
+                    <td><a href="">Edit</a></td>
+                    <td><a href="">Hapus</a></td>
                 </tr>
             <?php
             }

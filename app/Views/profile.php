@@ -9,16 +9,16 @@
 <body>
     <div class="profile-card">
             <div class="pic">
-                <img src="<?php echo base_url('assets/img/PROFPIC2.jpg'); ?>" alt="">
+                <img src="<?= $user['foto'] ?? base_url('assets/img/PROFPIC2.jpg'); ?>" alt="">
             </div>
             <div class="card-header">
-                <div class="name"><?= $nama ?></div>
+                <div class="name"><?= $user['nama'] ?></div>
             </div>
             <div class="card-header">
-                <div class="name"><?= $kelas ?></div>
+                <div class="name"><?= $user['nama_kelas'] ?></div>
             </div>
             <div class="card-header">
-                <div class="name"><?= $npm ?></div>
+                <div class="name"><?= $user['npm'] ?></div>
             </div>
     </div>
 </body>

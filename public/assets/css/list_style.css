@@ -50,15 +50,23 @@ table tr:nth-child(odd) {
     background-color: var(--white);
     color: var(--black);
 } */
-table td:nth-child(5):hover, td:nth-child(6):hover {
+/* table td:nth-child(5):hover, td:nth-child(6):hover {
     background-color: var(--white);
     color: var(--black);
     cursor: pointer;
-}
+} */
 table th {
   padding-top: .75rem;
   padding-bottom: .75rem;
   text-align: center;
   background-color: var(--sec-color);
   color: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+a:hover {
+    color: var(--main-color);
 }
