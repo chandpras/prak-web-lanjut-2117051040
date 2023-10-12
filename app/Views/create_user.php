@@ -6,7 +6,7 @@
 
         <div class="container">
             <div class="login">
-                <form action="<?= base_url('/user/store') ?>" method="post">
+                <form action="<?= base_url('/user/store') ?>" method="post" enctype="multipart/form-data">
                     <h1>CREATE PROFILE</h1>
                     <hr>
                     <label for="nama">Nama</label>
@@ -34,6 +34,8 @@
                             </ul>
                         <?php endif ?>
                     </label>
+                    <label for="foto">Upload Foto</label>
+                    <input type="file" name="foto" id="foto">
                     <button class="btn" type="submit">CREATE</button>
                 </form>
             </div>
