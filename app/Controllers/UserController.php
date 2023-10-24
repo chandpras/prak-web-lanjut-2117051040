@@ -60,7 +60,7 @@ class UserController extends BaseController
         ])) {
             $validation = \Config\Services::validation();
             return redirect()->to('/user/create')->withInput();
-        }    
+        }
 
         $path = 'assets/uploads/img/';
         $foto = $this->request->getFile('foto');
@@ -84,6 +84,63 @@ class UserController extends BaseController
         //     'npm' => $this->request->getVar('npm')
         // ];
         return redirect()->to('/user');
+    }
+
+    public function edit($id)
+    {
+
+        $user = $this->userModel->getUser($id);
+        $kelas = $this->kelasModel->getKelas();
+
+        $data = [
+            'title'     => 'Edit User',
+            'user'      => $user,
+            'kelas'     => $kelas,
+            'validation' => \Config\Services::validation()
+        ];
+
+        return view('edit_user', $data);
+    }
+
+    public function update($id)
+    {
+        $path = 'assets/uploads/img/';
+        $foto = $this->request->getFile('foto');
+
+        $data = [
+            'nama'      => $this->request->getVar('nama'),
+            'id_kelas'  => $this->request->getVar('kelas'),
+            'npm'       => $this->request->getVar('npm'),
+        ];
+
+        if($foto->isValid()){
+            $name = $foto->getRandomName();
+
+            if($foto->move($path, $name)){
+                $foto_path = base_url($path . $name);
+
+                $data['foto'] = $foto_path;
+            }
+        }
+
+        $result = $this->userModel->updateUser($data, $id);
+
+        if(!$result){
+            return redirect()->back()->withInput()->with('error', 'gagal menyimpan data');
+        }
+
+        return redirect()->to(base_url('/user'));
+    }
+
+    public function destroy($id)
+    {
+        $result = $this->userModel->deleteUser($id);
+
+        if(!$result){
+            return redirect()->back()->with('error', 'gagal menghapus data');
+        }
+
+        return redirect()->to(base_url('/user'))->with('success', 'berhasil menghapus data');
     }
 
     public function show($id)
