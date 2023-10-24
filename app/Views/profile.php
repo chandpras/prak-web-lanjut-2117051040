@@ -9,7 +9,7 @@
 <body>
     <div class="profile-card">
             <div class="pic">
-                <img src="<?= $user['foto'] ?? base_url('assets/img/PROFPIC2.jpg'); ?>" alt="">
+                <img src="<?= $user['foto'] ?? base_url('assets/img/defaultimg.jpg'); ?>" alt="">
             </div>
             <div class="card-header">
                 <div class="name"><?= $user['nama'] ?></div>
