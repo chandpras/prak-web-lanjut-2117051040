@@ -56,7 +56,7 @@ class UserController extends BaseController
         if(!$this->validate([
             'nama' => 'required',
             'kelas' => 'required',
-            'npm' => 'required|numeric|is_unique[user.npm]'
+            'npm' => 'required|is_unique[user.npm]'
         ])) {
             $validation = \Config\Services::validation();
             return redirect()->to('/user/create')->withInput();
@@ -77,12 +77,6 @@ class UserController extends BaseController
             'npm'       => $this->request->getVar('npm'),
             'foto'      => $foto
         ]);
-
-        // $data = [
-        //     'nama' => $this->request->getVar('nama'),
-        //     'kelas' => $this->request->getVar('kelas'),
-        //     'npm' => $this->request->getVar('npm')
-        // ];
         return redirect()->to('/user');
     }
 
@@ -104,6 +98,15 @@ class UserController extends BaseController
 
     public function update($id)
     {
+        if(!$this->validate([
+            'nama' => 'required',
+            'kelas' => 'required',
+            'npm' => 'required'
+        ])) {
+            $validation = \Config\Services::validation();
+            return redirect()->to('/user/' . $id . '/edit')->withInput();
+        }
+
         $path = 'assets/uploads/img/';
         $foto = $this->request->getFile('foto');
 
@@ -126,7 +129,7 @@ class UserController extends BaseController
         $result = $this->userModel->updateUser($data, $id);
 
         if(!$result){
-            return redirect()->back()->withInput()->with('error', 'gagal menyimpan data');
+            return redirect()->back()->withInput()->with('error', 'gagal mengubah data');
         }
 
         return redirect()->to(base_url('/user'));
@@ -148,7 +151,7 @@ class UserController extends BaseController
         $user = $this->userModel->getUser($id);
 
         $data = [
-            'title'     => 'Profile',
+            'title'     => 'Profil User',
             'user'      => $user,
         ];
 

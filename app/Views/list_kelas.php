@@ -20,7 +20,7 @@
 </section>
     
 <section class="title">
-    <h1 class="heading">list <span>user</span> </h1>
+    <h1 class="heading">list <span>kelas</span> </h1>
 </section>
     
 <section class="list">
@@ -28,28 +28,24 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nama</th>
-                <th>NPM</th>
-                <th>Kelas</th>
-                <th colspan="3">Aksi</th>
+                <th>Nama Kelas</th>
+                <th>Kapasitas</th>
+                <th colspan="2">Aksi</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            foreach ($users as $user) {
+            foreach ($kelas as $kelas) {
             ?>
                 <tr>
-                    <td><?= $user['id'] ?></td>
-                    <td><?= $user['nama'] ?></td>
-                    <td><?= $user['npm'] ?></td>
-                    <td><?= $user['nama_kelas'] ?></td>
+                    <td><?= $kelas['id'] ?></td>
+                    <td><?= $kelas['nama_kelas'] ?></td>
+                    <td><?= $kelas['kapasitas_kelas'] ?></td>
                     <td>
-                        <a href="<?= base_url('user/' . $user['id']) ?>">Detail</a>
-                    </td>
-                    <td><a href="<?= base_url('user/' . $user['id'] . '/edit') ?>">Edit</a>
+                        <a href="<?= base_url('kelas/' . $kelas['id'] . '/edit') ?>">Edit</a>
                     </td>
                     <td>
-                        <form action="<?= base_url('user/' . $user['id']) ?>" method="post">
+                        <form action="<?= base_url('kelas/' . $kelas['id']) ?>" method="post">
                             <input type="hidden" name="_method" value="DELETE">
                             <?= csrf_field() ?>
                             <button type="submit" class="btn">Delete</button>

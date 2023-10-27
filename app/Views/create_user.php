@@ -7,7 +7,7 @@
         <div class="container">
             <div class="login">
                 <form action="<?= base_url('/user/store') ?>" method="post" enctype="multipart/form-data">
-                    <h1>CREATE PROFILE</h1>
+                    <h1>CREATE USER</h1>
                     <hr>
                     <label for="nama">Nama</label>
                     <input type="text" placeholder="Nama" name="nama" value="<?= old('nama'); ?>">
@@ -24,7 +24,7 @@
                         ?>
                     </select>
                     <label for="npm">NPM</label>
-                    <input type="text" placeholder="NPM" name="npm" value="<?= old('npm'); ?>">
+                    <input type="number" placeholder="NPM" name="npm" value="<?= old('npm'); ?>">
                     <label>
                         <?php if (session()->getFlashdata('_ci_validation_errors')) : ?>
                             <ul>
@@ -37,6 +37,8 @@
                     <label for="foto">Upload Foto</label>
                     <input type="file" name="foto" id="foto">
                     <button class="btn" type="submit">CREATE</button>
+                    <button class="btn-sec"><a href="<?= base_url('/user') ?>">CANCEL</a></button>
+                    
                 </form>
             </div>
         </div>

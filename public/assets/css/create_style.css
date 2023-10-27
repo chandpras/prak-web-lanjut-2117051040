@@ -37,6 +37,25 @@ body {
     background: var(--main-color);
 }
 
+.btn-sec {
+    margin-top: 1rem;
+    text-align: center;
+    padding: .9rem 3rem;
+    font-size: 1rem;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    width: 15rem;
+}
+.btn-sec a {
+    text-decoration: none;
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+.btn-sec a:hover {
+    color: var(--white);
+}
+
 .container {
     width: 100%;
     display: flex;

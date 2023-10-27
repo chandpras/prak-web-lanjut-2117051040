@@ -7,7 +7,7 @@
         <div class="container">
             <div class="login">
                 <form action="<?= base_url('user/' . $user['id']) ?>" method="post" enctype="multipart/form-data">
-                    <h1>CREATE PROFILE</h1>
+                    <h1>EDIT USER</h1>
                     <hr>
                     <label for="nama">Nama</label>
                     <input type="hidden" name="_method" value="PUT">
@@ -26,7 +26,7 @@
                         ?>
                     </select>
                     <label for="npm">NPM</label>
-                    <input type="text" name="npm" id="npm" value="<?= $user['npm'] ?>">
+                    <input type="number" name="npm" id="npm" value="<?= $user['npm'] ?>">
                     <label>
                         <?php if (session()->getFlashdata('_ci_validation_errors')) : ?>
                             <ul>
@@ -40,6 +40,7 @@
                     <img src="<?= $user['foto'] ?? base_url('assets/img/defaultimg.jpg') ?>" alt="" style="width: 100px;">
                     <input type="file" name="foto" id="foto">
                     <button class="btn" type="submit">EDIT</button>
+                    <button class="btn-sec"><a href="<?= base_url('/user') ?>">CANCEL</a></button>
                 </form>
             </div>
         </div>
