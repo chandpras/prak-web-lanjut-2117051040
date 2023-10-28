@@ -13,8 +13,16 @@
     }
 
     body {
-        background: url('../img/bg2.jpg');
+        background: url('../img/bg4.jpg');
         background-size: cover;
+    }
+
+    .heading {
+        text-align: center;
+        color: var(--white);
+        text-transform: uppercase;
+        padding: 4rem;
+        font-size: 3rem;
     }
 
     .profile-card {
@@ -28,7 +36,7 @@
     }
 
     .card-header {
-        background: var(--main-color);
+        background: radial-gradient(var(--sec-color) 40% ,var(--main-color));
         padding: 1.25rem .6rem;
         border-radius: 20px;
         margin-top: 5%;
@@ -50,7 +58,7 @@
     }
 
     .name {
-        color: var(--white);
+        color: var(--main-color);
         font-size: 15pt;
         font-weight: 600;
     }

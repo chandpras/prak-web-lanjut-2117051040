@@ -52,7 +52,6 @@ class UserModel extends Model
         }
         return $this->select('user.*, kelas.nama_kelas')
                 ->join('kelas', 'kelas.id=user.id_kelas')->findAll();
-        // return $this->join('kelas', 'kelas.id=user.id_kelas')->findAll();
     }
 
     public function updateUser($data, $id)

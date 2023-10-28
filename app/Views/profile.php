@@ -7,6 +7,7 @@
     <title>Profile</title>
 </head>
 <body>
+    <h1 class="heading">profil user </h1>
     <div class="profile-card">
             <div class="pic">
                 <img src="<?= $user['foto'] ?? base_url('assets/img/defaultimg.jpg'); ?>" alt="">

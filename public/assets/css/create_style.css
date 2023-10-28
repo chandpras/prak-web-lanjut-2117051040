@@ -14,12 +14,17 @@
 }
 
 body {
-    background-image: url("../img/bg1.jpg");
+    background-image: url("../img/bg3.jpg");
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+}
+
+img {
+    width: 10rem;
+    margin-top: 1.5rem;
 }
 
 .btn {
@@ -46,6 +51,7 @@ body {
     cursor: pointer;
     border: none;
     width: 15rem;
+    margin-bottom: .7rem;
 }
 .btn-sec a {
     text-decoration: none;
@@ -64,6 +70,7 @@ body {
     background: var(--black);
     border: var(--border-main);
     border-radius: 1rem;
+    flex-wrap: wrap;
 }
 
 .login {
@@ -72,11 +79,11 @@ body {
 
 form {
     width: 15rem;
-    margin: 2.5rem auto;
+    margin: .8rem auto;
 }
 
 h1 {
-    margin: 1.2rem;
+    margin: 1rem;
     text-align: center;
     font-weight: bolder;
     text-transform: uppercase;

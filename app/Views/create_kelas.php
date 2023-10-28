@@ -5,6 +5,9 @@
 <link rel="stylesheet" href="<?= base_url('assets/css/create_style.css') ?>">
 
         <div class="container">
+            <div class="img">
+                <img src="<?= base_url('assets/img/logo_mainblack.png') ?>" alt="">
+            </div>
             <div class="login">
                 <form action="<?= base_url('/kelas/store') ?>" method="post">
                     <h1>CREATE KELAS</h1>
