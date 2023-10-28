@@ -1,0 +1,111 @@
+:root {
+    --main-color: #b9bb75;
+    --sec-color: #383421;
+    --white: #fff;
+    --black: #010103;
+    --border-main: .1rem solid #b9bb75;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('../img/bg4.jpg');
+    background-size: cover;
+}
+
+section {
+    padding: 2rem 7%;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.image img {
+    width: 30rem;
+}
+
+.header {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header .navbar a {
+    margin: 0 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--white);
+}
+.header .navbar a:hover {
+    color: var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.header .icon div {
+    color: var(--white);
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.header .icon div:hover {
+    color: var(--main-color);
+}
+
+.heading {
+    text-align: center;
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.heading span {
+    color: var(--sec-color);
+    text-transform: uppercase;
+}
+
+.title {
+    margin-top: 8rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+a:hover {
+    color: var(--main-color);
+}
+
+.btn {
+    color: var(--white);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.btn:hover {
+    color: var(--main-color);
+}
